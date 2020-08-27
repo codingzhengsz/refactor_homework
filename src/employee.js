@@ -30,9 +30,27 @@ class Engineer extends Employee {
     }
 }
 
+class Manager extends Employee {
+    get type() {
+        return 'manager';
+    }
+}
+
+class Salesman extends Employee {
+    get type() {
+        return 'salesman';
+    }
+}
+
 function createEmployee(name, type) {
     if (type === 'engineer') {
         return new Engineer(name, type);
+    }
+    if (type === 'manager') {
+        return new Manager(name, type);
+    }
+    if (type === 'salesman') {
+        return new Salesman(name, type);
     }
     return new Employee(name, type);
 }
