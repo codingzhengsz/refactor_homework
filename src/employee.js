@@ -2,7 +2,6 @@ class Employee {
     constructor(name, type) {
         this.validateType(type);
         this._name = name;
-        this._type = type;
     }
 
     validateType(type) {
@@ -13,10 +12,6 @@ class Employee {
         ].includes(type)) {
             throw new Error(`Employee cannot be of type ${type}`);
         }
-    }
-
-    get type() {
-        return this._type;
     }
 
     toString() {
