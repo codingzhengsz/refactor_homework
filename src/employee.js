@@ -1,4 +1,4 @@
-const EmployeeClass = class Employee {
+class Employee {
     constructor(name, type) {
         this.validateType(type);
         this._name = name;
@@ -20,6 +20,10 @@ const EmployeeClass = class Employee {
     }
 }
 
+function createEmployee(name, type) {
+    return new Employee(name, type);
+}
+
 module.exports = {
-    EmployeeClass,
+    createEmployee,
 }
