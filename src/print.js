@@ -10,14 +10,17 @@ function printDetails(invoice, outstanding) {
   console.log(`amount: ${invoice.dueDate.toLocaleDateString()}`);
 }
 
-function printOwing (invoice) {
+function calculateOurStanding(invoice) {
   let outstanding = 0;
-  printHeader();
-
-  // calculate outstanding
   for (const o of invoice.borderSpacing) {
     outstanding += o.amount;
   }
+  return outstanding;
+}
+
+function printOwing (invoice) {
+  printHeader();
+  let outstanding = calculateOurStanding(invoice);
 
   // record due date
   const today = new Date();
